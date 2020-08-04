@@ -26,15 +26,22 @@
 			preg_match_all('/data-adid="(.*?)"/', $value, $dataadid);
 			$exist_username = mysqli_num_rows(mysqli_query($mysql, "SELECT * FROM kleinanzeigen WHERE id = '".$dataadid[1][0]."'"));
 			if ($exist_username == 0) {
+				$contents= file_get_contents($bild[1]);
+				setlocale(LC_TIME, 'de_DE');
+				$savename = strftime("%Y-%m-%d_%H-%M-%S");
+				$savefile = fopen('artikel/' .  $dataadid[1][0] . '.jpg', "w");
+				fwrite($savefile, $contents);
+				fclose($savefile);				
 				echo '<h3>NEU</h3><br />';
 				mysqli_query($mysql, "INSERT INTO kleinanzeigen VALUES('',
 				    '".mysqli_real_escape_string($mysql, $dataadid[1][0])."',
-				    '".mysqli_real_escape_string($mysql, $bild[1])."',
+				    '".mysqli_real_escape_string($mysql, 'artikel/' .  $dataadid[1][0] . '.jpg')."',
 				    '".mysqli_real_escape_string($mysql, $link[1])."',
 				    '".mysqli_real_escape_string($mysql, $titel[2][0])."'
 				)") OR die("'".$sql."' : ".mysql_error());   
 				echo $titel[2][0] . '<br /><img src="'.$bild[1].'" /><br /><hr />';
 			}
+
 		}  
 	
 	}
