@@ -1,9 +1,9 @@
 <?php
 	$db_pw = "xxx";
 	$host = "xxx";
-	$sb_name = "xxx";
+	$db_name = "xxx";
 	$db_benutzer = "xxx";
-	$mysql = mysqli_connect($host, $db_benutzer, $db_pw, $sb_name);
+	$mysql = mysqli_connect($host, $db_benutzer, $db_pw, $db_name);
 ?>
 <html>
   <head>
