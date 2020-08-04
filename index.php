@@ -8,51 +8,33 @@
 <html>
   <head>
     <title>ebay Kleinanzeigen</title>
-<style type="text/css">
-	.aditem-image {border: 1px solid #ff0000; }
-	
-table {     
-	width: 50%;
-	border: 0;   
-}
-td {    
-	border: 0.1em solid;
-	text-align: center;     
-	width: 10em;                    
-	padding: 1em;
-	background-color: #d8ffc4;
-	border: 0.1em solid #c0c0c0;
-}
-th {    
-	border: 0.1em solid #c0c0c0;
-	text-align: center;
-	width: 10em;
-	padding: 1em;
-	background-color: #ededed;
-}
-
-</style>  
-</head>
+	<style type="text/css">
+		.aditem-image {border: 1px solid #ff0000; }
+		table { width: 50%; border: 0; }
+		td { border: 0.1em solid; text-align: center; width: 10em; padding: 1em; background-color: #d8ffc4; border: 0.1em solid #c0c0c0; }
+		th { border: 0.1em solid #c0c0c0; text-align: center; width: 10em; padding: 1em; background-color: #ededed; }
+	</style>
+  </head>
   <body>
 	<table width="100%" border="0">
     	<tr>
     		<th>Bild</th>
-    		<th>Artikel</th> 
+    		<th>Beschreibung</th> 
   		</tr>
 		<?php
-		$result = mysqli_query($mysql, "SELECT * FROM kleinanzeigen");
-    	while($row = mysqli_fetch_object($result))                                    
-    	{
-			echo '
-			<tr>
-				<td>
-					<a href="'.$row->href.'" target="_blank"><img src="'.$row->img.'" /></a>
-				</td>
-				<td>
-					<a href="'.$row->href.'" target="_blank">'.$row->alt.'</a>
-				</td>
-			</tr>';
-		}  
+			$result = mysqli_query($mysql, "SELECT * FROM kleinanzeigen");
+    			while($row = mysqli_fetch_object($result))                                    
+    			{
+				echo '
+				<tr>
+					<td>
+						<a href="'.$row->href.'" target="_blank"><img src="'.$row->img.'" /></a>
+						</td>
+					<td>
+						<a href="'.$row->href.'" target="_blank">'.$row->alt.'</a>
+					</td>
+				</tr>';
+			}  
 		?>
 	</table>
   </body>
