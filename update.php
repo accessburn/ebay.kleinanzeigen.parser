@@ -1,5 +1,5 @@
 <?php
-	$profillink = 'https://www.ebay-kleinanzeigen.de/s-bestandsliste.html?userId=2200811';
+	$profillink = 'https://www.ebay-kleinanzeigen.de/s-bestandsliste.html?userId=EIGENE_USER-ID';
 	$db_pw = "xxxx";
 	$host = "xxx";
 	$sb_name = "xxx";
