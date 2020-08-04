@@ -8,6 +8,7 @@
 <html>
   <head>
     <title>ebay Kleinanzeigen</title>
+    <link rel="stylesheet" href="https://showmeyourpc.de/css/style.css?rnd=1596531168" />
 	<style type="text/css">
 		.aditem-image {border: 1px solid #ff0000; }
 		table { width: 50%; border: 0; }
@@ -18,23 +19,28 @@
   <body>
 	<table width="100%" border="0">
     	<tr>
+    		<th>Nr.</th>
     		<th>Bild</th>
-    		<th>Beschreibung</th> 
+    		<th>Artikel</th> 
   		</tr>
 		<?php
-			$result = mysqli_query($mysql, "SELECT * FROM kleinanzeigen");
-    			while($row = mysqli_fetch_object($result))                                    
-    			{
-				echo '
-				<tr>
-					<td>
-						<a href="'.$row->href.'" target="_blank"><img src="'.$row->img.'" /></a>
-						</td>
-					<td>
-						<a href="'.$row->href.'" target="_blank">'.$row->alt.'</a>
-					</td>
-				</tr>';
-			}  
+		$a=1;
+		$result = mysqli_query($mysql, "SELECT * FROM kleinanzeigen");
+	    	while($row = mysqli_fetch_object($result))                                    
+	    	{
+			echo '
+			<tr>
+				<td>
+					'.$a++.'
+				</td>
+				<td>
+					<a href="'.$row->href.'" target="_blank"><img src="'.$row->img.'" /></a>
+				</td>
+				<td>
+					<a href="'.$row->href.'" target="_blank">'.$row->alt.'</a>
+				</td>
+			</tr>';
+		}  
 		?>
 	</table>
   </body>
