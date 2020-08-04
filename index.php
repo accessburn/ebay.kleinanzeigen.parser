@@ -8,7 +8,6 @@
 <html>
   <head>
     <title>ebay Kleinanzeigen</title>
-    <link rel="stylesheet" href="https://showmeyourpc.de/css/style.css?rnd=1596531168" />
 	<style type="text/css">
 		.aditem-image {border: 1px solid #ff0000; }
 		table { width: 50%; border: 0; }
