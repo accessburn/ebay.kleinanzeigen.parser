@@ -16,7 +16,6 @@
 		preg_match_all('/<article class="aditem" data-adid="(.*?)">(.*?)<\/article>/s',$html, $bodytag);	  
 		foreach ($bodytag[0] as $key => $value) {
 			$value = str_replace("<div class=\"imagebox\"  data-href=\"", "<a target=\"_blank\" href=\"https://www.ebay-kleinanzeigen.de", $value);
-			print_r($value);
 			$value = str_replace("</div>", "</a>", $value);
 			$value = str_replace("article", "div", $value);
 			preg_match_all('/alt="(.*?)"/s', $value, $alt);
