@@ -2,9 +2,9 @@
 	$profillink = 'https://www.ebay-kleinanzeigen.de/s-bestandsliste.html?userId=EIGENE_USER-ID';
 	$db_pw = "xxxx";
 	$host = "xxx";
-	$sb_name = "xxx";
+	$db_name = "xxx";
 	$db_benutzer = "xxx";
-	$mysql = mysqli_connect($host, $db_benutzer, $db_pw, $sb_name);
+	$mysql = mysqli_connect($host, $db_benutzer, $db_pw, $db_name);
 	mysqli_query($mysql,"TRUNCATE TABLE kleinanzeigen");
 	for($i=1; $i < 3; $i++) {
    		echo '<h1>Seite: ' . $i.'</h1><br /><br />';
